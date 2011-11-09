@@ -1,9 +1,9 @@
 package main
 
 import (
-	. "http"
 	. "github.com/mattn/go-cgiserver/cgiserver"
-	"exec"
+	. "net/http"
+	"os/exec"
 )
 
 func main() {

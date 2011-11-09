@@ -1,8 +1,8 @@
 package cgiserver
 
 import (
-	"http"
-	"http/cgi"
+	"net/http"
+	"net/http/cgi"
 	"os"
 	"path/filepath"
 )
