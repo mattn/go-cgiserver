@@ -32,7 +32,7 @@ func (h *CgiHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	file = filepath.Join(h.Root, file)
 
 	f, e := os.Stat(file)
-	if e != nil || f.IsDirectory() {
+	if e != nil || f.IsDir() {
 		if len(h.DefaultApp) > 0 {
 			file = h.DefaultApp
 		}
@@ -58,7 +58,7 @@ func (h *CgiHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 		cgih.ServeHTTP(w, r)
 	} else {
-		if (f != nil && f.IsDirectory()) || file == "" {
+		if (f != nil && f.IsDir()) || file == "" {
 			tmp := filepath.Join(file, "index.html")
 			f, e = os.Stat(tmp)
 			if e == nil {
