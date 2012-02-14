@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "github.com/mattn/go-cgiserver/cgiserver"
+	. "github.com/mattn/go-cgiserver"
 	. "net/http"
 	"os/exec"
 )
